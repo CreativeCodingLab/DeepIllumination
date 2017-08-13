@@ -1,27 +1,28 @@
 from os import listdir
 from os.path import join
 
+import torch.utils.data as data
+
 from util import is_image, load_image
 
-class DataLoaderHelper():
+class DataLoaderHelper(data.Dataset):
     def __init__(self, image_dir):
-        self.a_path = join(image_dir, "a")
-        self.b_path = join(image_dir, "b")
-        self.image_filenames = [x for x in listdir(self.a_path) if is_image(x)]
-        print(self.image_filenames)
+        super(DataLoaderHelper, self).__init__()
+        self.albedo_path = join(image_dir, "albedo")
+        self.depth_path = join(image_dir, "depth")
+        self.direct_path = join(image_dir, "direct")
+        self.normal_path = join(image_dir, "normal")
+        self.gt_path = join(image_dir, "gt")
+        self.image_filenames = [x for x in listdir(self.albedo_path) if is_image(x)]
+
 
     def __getitem__(self, index):
-        input = load_image(join(self.a_path, self.image_filenames[index]))
-        target = load_image(join(self.b_path, self.image_filenames[index]))
+        albedo = load_image(join(self.albedo_path, self.image_filenames[index]))
+        depth = load_image(join(self.depth_path, self.image_filenames[index]))
+        direct = load_image(join(self.direct_path, self.image_filenames[index]))
+        normal = load_image(join(self.normal_path, self.image_filenames[index]))
+        gt = load_image(join(self.gt_path, self.image_filenames[index]))
+        return albedo, direct, normal, depth, gt
 
     def __len__(self):
         return len(self.image_filenames)
-
-
-def get_training_data(root_dir):
-    train_dir = join(root_dir, "train")
-    return DataLoaderHelper(train_dir)
-
-def get_test_data(root_dir):
-    test_dir = join(root_dir, "test")
-    return DataLoaderHelper(test_dir)

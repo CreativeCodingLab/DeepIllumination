@@ -2,12 +2,12 @@ import torch
 import torch.nn as nn
 
 def weights_init(m):
-    classname = m.__class__.name__
+    classname = m.__class__.__name__
     if classname.find('Conv') != -1:
         m.weight.data.normal_(0.0, 0.02)
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
-        m.bias.data.fill(0)
+        m.bias.data.fill_(0)
 
 
 class G(nn.Module):
@@ -23,20 +23,20 @@ class G(nn.Module):
         self.conv8 = nn.Conv2d(n_filters * 8, n_filters * 8, 4, 2, 1)
 
         self.deconv1 = nn.ConvTranspose2d(n_filters * 8, n_filters * 8, 4, 2, 1)
-        self.deconv2 = nn.ConvTranspose2d(n_filters * 8, n_filters * 8, 4, 2, 1)
-        self.deconv3 = nn.ConvTranspose2d(n_filters * 8, n_filters * 8, 4, 2, 1)
-        self.deconv4 = nn.ConvTranspose2d(n_filters * 8, n_filters * 8, 4, 2, 1)
-        self.deconv5 = nn.ConvTranspose2d(n_filters * 8, n_filters * 4, 4, 2, 1)
-        self.deconv6 = nn.ConvTranspose2d(n_filters * 4, n_filters * 2, 4, 2, 1)
-        self.deconv7 = nn.ConvTranspose2d(n_filters * 2, n_filters, 4, 2, 1)
-        self.deconv8 = nn.ConvTranspose2d(n_filters, n_channel_output, 4, 2, 1)
+        self.deconv2 = nn.ConvTranspose2d(n_filters * 8 * 2, n_filters * 8, 4, 2, 1)
+        self.deconv3 = nn.ConvTranspose2d(n_filters * 8 * 2, n_filters * 8, 4, 2, 1)
+        self.deconv4 = nn.ConvTranspose2d(n_filters * 8 * 2, n_filters * 8, 4, 2, 1)
+        self.deconv5 = nn.ConvTranspose2d(n_filters * 8 * 2, n_filters * 4, 4, 2, 1)
+        self.deconv6 = nn.ConvTranspose2d(n_filters * 4 * 2, n_filters * 2, 4, 2, 1)
+        self.deconv7 = nn.ConvTranspose2d(n_filters * 2 * 2, n_filters, 4, 2, 1)
+        self.deconv8 = nn.ConvTranspose2d(n_filters * 2, n_channel_output, 4, 2, 1)
 
         self.batch_norm = nn.BatchNorm2d(n_filters)
         self.batch_norm2 = nn.BatchNorm2d(n_filters * 2)
         self.batch_norm4 = nn.BatchNorm2d(n_filters * 4)
         self.batch_norm8 = nn.BatchNorm2d(n_filters * 8)
 
-        self.leaky_relu = nn.LeakyRelu(0.2, True)
+        self.leaky_relu = nn.LeakyReLU(0.2, True)
         self.relu = nn.ReLU(True)
 
         self.dropout = nn.Dropout(0.5)
@@ -65,7 +65,7 @@ class G(nn.Module):
         decoder5 = torch.cat((decoder5, encoder3), 1)
         decoder6 = self.batch_norm2(self.deconv6(self.relu(decoder5)))
         decoder6 = torch.cat((decoder6, encoder2),1)
-        decoder7 = self.batch_norm(self.deconv7(self.relu(decorder6)))
+        decoder7 = self.batch_norm(self.deconv7(self.relu(decoder6)))
         decoder7 = torch.cat((decoder7, encoder1), 1)
         decoder8 = self.deconv8(self.relu(decoder7))
         output = self.tanh(decoder8)
@@ -74,7 +74,7 @@ class G(nn.Module):
 class D(nn.Module):
     def __init__(self, n_channel_input, n_channel_output, n_filters):
         super(D, self).__init__()
-        self.conv1 = nn.Conv2d(n_channel_input + n_channel_output, n_filter, 4, 2, 1)
+        self.conv1 = nn.Conv2d(n_channel_input + n_channel_output, n_filters, 4, 2, 1)
         self.conv2 = nn.Conv2d(n_filters, n_filters * 2, 4, 2, 1)
         self.conv3 = nn.Conv2d(n_filters * 2, n_filters * 4, 4, 2, 1)
         self.conv4 = nn.Conv2d(n_filters * 4, n_filters * 8, 4, 1, 1)
