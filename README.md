@@ -55,4 +55,6 @@ Check results/DeepRendering for the output.
 ## Dataset
 Dataset was created using a simple cornell box made with Unity3D. GBuffers(depth, normal, albedo, direct light) and VXGI outputs are extracted.
 
-For training
+For training, we used 4 object - sphere, cylinder, cube, stanford bunny and a dragon.
+
+For training we used 2 object - statue and buddha
