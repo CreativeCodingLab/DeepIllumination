@@ -77,8 +77,8 @@ For training we used 2 object - statue and buddha
 
  ## Credits
 * [Imgae to Image Translation](https://arxiv.org/abs/1611.07004)
+* [SRGAN](https://arxiv.org/pdf/1609.04802.pdf)
 * [Creating photorealistic images from gameboy camera](http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/)
 * [CS231n](https://cs231n.github.io/)
-* [Pytorch pix2pix](https://github.com/mrzhu-cool/pix2pix-pytorch)
 
 
