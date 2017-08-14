@@ -2,7 +2,7 @@
 
 <img src="https://github.com/CreativeCodingLab/DeepRendering/blob/master/teaser.png" alt="alt text" width="945" height="322.5">
 
-## A paper introducing our DeepRendering approach is currently in preparation to EuroGraphics
+#### A paper introducing our DeepRendering approach is currently in preparation to EuroGraphics
 
 ## Introduction
 
