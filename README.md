@@ -44,4 +44,6 @@ python train.py --dataset dataset/DeepRendering --model checkpoint/
 Check results/DeepRendering for the output.
 
 ## Dataset
-Dataset was created using Unity3D 
+Dataset was created using a simple cornell box made with Unity3D. GBuffers(depth, normal, albedo, direct light) and VXGI outputs are extracted.
+
+For training
