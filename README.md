@@ -28,30 +28,20 @@ To run the project you will need:
 ## Running
 
 Once you have all the depenedencies ready, do the folowing:
-
 Download the dataset and extract it.
-
 Download the checkpoint file and extract it.
-
 Now you will have two folders checkpoint and dataset.
 
 To train, move your training set to dataset/[name of your dataset]/train and validation set to dataset/[name of your dataset]/val
-
 Run python train.py --dataset dataset/[name of your dataset]/ --n_epochs num of epochs
-
 python train.py --dataset dataset/DeepRendering --n_epochs 200
-
 check train.py for more options.
-
 Validation is done afer every epoch and will be inside validation/DeepRendering/
 
 To test, 
-
 Run python test.py --dataset dataset/[name of your dataset]/ --model checkpoint/[name of your checkpoint]
-
 python train.py --dataset dataset/DeepRendering --model checkpoint/
-
 Check results/DeepRendering for the output.
 
 ## Dataset
-We picked random 40 images from pixar movies, added gaussian noise of different standard deviation, 5 sets of 5 different standard deviation making a total of 1000 images for the training set. For validation we used 10 images completely different from the training set and added gaussian noise. For testing we had both added gaussian images and real noisy images.
+Dataset was created using Unity3D 
