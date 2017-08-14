@@ -33,17 +33,23 @@ Download the checkpoint file and extract it.
 Now you will have two folders checkpoint and dataset.
 
 To train, move your training set to dataset/[name of your dataset]/train and validation set to dataset/[name of your dataset]/val
+```python
 Run python train.py --dataset dataset/[name of your dataset]/ --n_epochs num of epochs
+```
+```python
 python train.py --dataset dataset/DeepRendering --n_epochs 200
+```
 check train.py for more options.
 Validation is done afer every epoch and will be inside validation/DeepRendering/
 
 To test, 
 Run 
-'''python 
+```python 
 python test.py --dataset dataset/[name of your dataset]/ --model checkpoint/[name of your checkpoint] 
-'''
+```
+```python 
 python train.py --dataset dataset/DeepRendering --model checkpoint/
+```
 Check results/DeepRendering for the output.
 
 ## Dataset
