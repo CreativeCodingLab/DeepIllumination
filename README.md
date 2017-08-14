@@ -71,9 +71,9 @@ For training we used 2 object - statue and buddha
 
  ## Notes
  
-* Increase the num of iteration to 100K.
-* Train the network for different noises.
-* Make it work on a real-time app.
+* One network for one world - training a network by introducing it to the rules of one enviornment produce good result rather than to make a generalized network to work for all kinds of enviornment. Also we only need fewer parameters.
+* Network gives a good approximatation even though it has only seen the training set 12 times.
+* Our network failed to learn ambient occlsuion. We believe with more dataset focusing on ambient occlusion we can force the network to learn AO.
 
  ## Credits
 * [Imgae to Image Translation](https://arxiv.org/abs/1611.07004)
