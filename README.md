@@ -66,13 +66,8 @@ For training we used 2 object - statue and buddha
 * n_filters - 128
 
 ## Results
-3D rendering test data:
-<img src="https://github.com/manumathewthomas/CS523Project3/blob/master/result1.PNG" alt="alt text" width="960" height="480">
 
-Real noise images:
-<img src="https://github.com/manumathewthomas/CS523Project3/blob/master/result2.png" alt="alt text" width="960" height="480">
+<img src="https://github.com/CreativeCodingLab/DeepRendering/blob/master/output.png" alt="alt text" width="960" height="480">
 
-CT-Scan:
-<img src="https://github.com/manumathewthomas/CS523Project3/blob/master/result3.PNG" alt="alt text" width="960" height="480">
  
 
