@@ -39,8 +39,10 @@ check train.py for more options.
 Validation is done afer every epoch and will be inside validation/DeepRendering/
 
 To test, 
-Run '''python 
-python test.py --dataset dataset/[name of your dataset]/ --model checkpoint/[name of your checkpoint] '''
+Run 
+'''python 
+python test.py --dataset dataset/[name of your dataset]/ --model checkpoint/[name of your checkpoint] 
+'''
 python train.py --dataset dataset/DeepRendering --model checkpoint/
 Check results/DeepRendering for the output.
 
