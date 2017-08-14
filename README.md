@@ -14,7 +14,7 @@ Animation movie studios like Pixar uses a technique called Pathtracing which pro
 * [Dataset](#dataset)
 * [Hyperparameters](#hyperparameter)
 * [Results](#results)
-* [Improvements](#improvements)
+* [Notes](#notes)
 * [Credits](#credits)
 
 ## Installation
@@ -69,5 +69,16 @@ For training we used 2 object - statue and buddha
 
 <img src="https://github.com/CreativeCodingLab/DeepRendering/blob/master/output.png" alt="alt text" width="960" height="480">
 
+ ## Notes
  
+* Increase the num of iteration to 100K.
+* Train the network for different noises.
+* Make it work on a real-time app.
+
+ ## Credits
+* [Imgae to Image Translation](https://arxiv.org/abs/1611.07004)
+* [Creating photorealistic images from gameboy camera](http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/)
+* [CS231n](https://cs231n.github.io/)
+* [Pytorch pix2pix](https://github.com/mrzhu-cool/pix2pix-pytorch)
+
 
