@@ -1,6 +1,6 @@
 # DeepRendering | [Video](https://www.youtube.com/watch?v=z_zmRWxU-PY)
 
-
+A paper introducing our DeepRendering approach is currently in preparation to EuroGraphics
 
 ## Introduction
 
