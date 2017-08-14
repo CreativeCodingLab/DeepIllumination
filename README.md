@@ -1,6 +1,6 @@
 # DeepRendering | [Video](https://www.youtube.com/watch?v=z_zmRWxU-PY)
 
-<img src="https://github.com/CreativeCodingLab/DeepRendering/blob/master/teaser.png" alt="alt text" width="960" height="240">
+<img src="https://github.com/CreativeCodingLab/DeepRendering/blob/master/teaser.png" alt="alt text" width="945" height="322.5">
 
 A paper introducing our DeepRendering approach is currently in preparation to EuroGraphics
 
