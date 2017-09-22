@@ -14,6 +14,7 @@ from torch.utils.data import DataLoader
 from torch.autograd import Variable
 from model import G, D, weights_init
 from util import load_image, save_image
+from skimage.measure import compare_ssim as ssim
 
 
 
@@ -152,7 +153,7 @@ def train(epoch):
         output = netD(torch.cat((albedo, direct, normal, depth, fake_B), 1))
         label.data.resize_(output.size()).fill_(real_label)
         err_g = criterion(output, label) + opt.lamda \
-            * criterion_l1(fake_B, gt)
+            * criterion_l1(fake_B, gt) 
         err_g.backward()
         d_x_gx_2 = output.data.mean()
         optimizerG.step()
