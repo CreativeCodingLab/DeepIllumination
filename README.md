@@ -2,7 +2,7 @@
 
 <img src="https://github.com/CreativeCodingLab/DeepRendering/blob/master/teaser.png" alt="alt text" width="945" height="322.5">
 
-#### A paper introducing our DeepIllumination approach is currently in preparation to EuroGraphics
+#### A paper introducing our DeepIllumination approach is currently in preparation to EuroGraphics. Pre-print is available on arXiv at https://arxiv.org/abs/1710.09834
 
 ## Introduction
 
